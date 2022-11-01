@@ -48,6 +48,10 @@ const Register = () => {
             "Email verification link sent to your email, please verify your email to complete registration"
           );
         }
+
+        values.username = "";
+        values.email = "";
+        values.password = "";
       } catch (err) {
         toast.error("Registration failed. Please try again.");
       }
@@ -78,6 +82,7 @@ const Register = () => {
               </div>
               <form onSubmit={formik.handleSubmit}>
                 <FormInput
+                  labelName={"Username"}
                   name="Username"
                   type="text"
                   required
@@ -89,6 +94,7 @@ const Register = () => {
                   touched={formik.touched.username}
                 />
                 <FormInput
+                  labelName="Email"
                   name="Email"
                   required={true}
                   type="email"
@@ -101,6 +107,7 @@ const Register = () => {
                 />
 
                 <FormInput
+                  labelName="Password"
                   name="Password"
                   required={true}
                   type="password"

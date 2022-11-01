@@ -60,7 +60,7 @@ const loginController = asyncHandler(async (req, res, next) => {
     .cookie("refreshToken", newRefreshToken, {
       httpOnly: true,
       sameSite: "none",
-      secure: false,
+      secure: true,
       maxAge: 1000 * 60 * 60 * 24 * 30,
     })
     .status(200)

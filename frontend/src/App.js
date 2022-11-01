@@ -9,6 +9,8 @@ import Register from "./pages/auth/Register";
 import EmailVerificationConfirmation from "./pages/auth/EmailVerificationConfirmation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import ForgotPassword from "./pages/auth/ForgotPassword";
+import PasswordReset from "./pages/auth/PasswordReset";
 
 const App = () => {
   const theme = useSelector(themeSelect);
@@ -27,6 +29,9 @@ const App = () => {
           path="verify-email/:id/:token"
           element={<EmailVerificationConfirmation />}
         />
+        <Route path="reset-password/:id/:token" element={<PasswordReset />} />
+
+        <Route path="forgot-password" element={<ForgotPassword />} />
         <Route path="*" element={<h1>404</h1>} />
       </Routes>
       <ToastContainer
